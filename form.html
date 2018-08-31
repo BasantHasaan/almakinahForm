@@ -1,0 +1,33 @@
+<html>
+        <head>
+                <link rel="stylesheet" type="text/css" href="form.css">
+        </head>
+        <body>
+            <form action="https://levelup-assessment-backend-ddmwdsdlta.now.sh/api/submission
+            "  method="post" enctype="application/json">
+                <div class="container">
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" name="name" required value="">
+
+                    <label for="repo"><b>Repo</b></label>
+                    <input type="text" name="repo" required value="">
+                
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" name="email" required value="amr.m.draz@gmail.com" >
+            
+                    <label for="age"><b>Age</b></label>
+                    <input type="number"name="age" required value=0>
+
+                    <label for="secret"><b>Secret</b></label>
+                    <input type="hidden"name="secret" required value="eyJhbGciOiJIUzI1NiJ9.QWxNYWtpbmFoIFJvY2tzIQ.NuGScRI61Z1eFruSRdrzejan9JwSnEJqGPvDelpTwjw">
+                    <hr>
+                    <input type="checkbox" name="final_submission" required value="false" >
+                    <label for="final_submission"><b>final_submission</b></label>
+                    
+                    <hr>
+                    <button type="submit" class="registerbtn">submit</button>
+                </div>
+            </form>
+
+        </body>
+</html>
