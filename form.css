@@ -12,7 +12,7 @@ form {
   }
 
 /* Full-width input fields */
-input[type=text], input[type=number] {
+input[type=text], input[type=number], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -21,7 +21,7 @@ input[type=text], input[type=number] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=number]:focus {
+input[type=text]:focus, input[type=number]:focus, input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -54,13 +54,3 @@ hr {
   opacity:1;
 }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}

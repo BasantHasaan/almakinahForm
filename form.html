@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html>
         <head>
                 <meta charset="UTF-8">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
                 <link rel="stylesheet" type="text/css" href="form.css">
         </head>
         <body>
-            <form method="Post" action="https://levelup-assessment-backend-ddmwdsdlta.now.sh/api/submission" enctype="application/json">
-                <div class="container">
-                    <label for="repo"><b>Name</b></label>
+            <form id="myForm" >
+                    <label for="name"><b>Name</b></label>
                     <input type="text" name="name" value="">
 
                     <label for="repo"><b>Repo</b></label>
@@ -28,6 +30,41 @@
                     <input type="submit" class="registerbtn" value="Submit">
                 </div>
             </form>
+            <script>
+                $(document).ready(function(){
+                    $("#myForm").submit(function(e){
+                        e.preventDefault();
+                        var form = $(this);
+                        var data = form.serializeArray();
+
+                        $.ajax({
+                            url: "https://levelup-assessment-backend-ddmwdsdlta.now.sh/api/submission",
+                            dataType: 'json',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(getFormData(data)),
+                            success: function(data){
+                                console.log("DATA POSTED SUCCESSFULLY"+data);
+                            },
+                            error: function( jqXhr, textStatus, errorThrown ){
+                                console.log( errorThrown );
+                            }
+                        });
+                    });
+                });
+
+                //utility function
+                function getFormData(data) {
+                    var unindexed_array = data;
+                    var indexed_array = {};
+
+                    $.map(unindexed_array, function(n, i) {
+                        indexed_array[n['name']] = n['value'];
+                    });
+
+                    return indexed_array;
+                }
+            </script>
         </body>
        
 </html>
